@@ -8,9 +8,9 @@ The site is mostly static but pulls live data such as projects, members, and lea
 
 ## Guidelines
 
-- Do not push directly to the `main` branch  
-- Work on separate branches and open Pull Requests  
+- Create Forks and open Pull Requests  
 - Modify only relevant files to avoid conflicts.
+- For every page you work, on create modular components, that can be reused elsewhere too.
 - Use **pnpm** as the package manager (do not use npm or yarn)  
 - Run `pnpm run build` before pushing any changes  
 
