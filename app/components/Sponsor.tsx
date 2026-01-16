@@ -70,11 +70,23 @@ export default function Sponsor() {
               <div className="h-2" />
             </Line>
 
-            <Line n={4} color="text-green-500/40">
-              <p className="text-green-500">
-                Empower tomorrow&apos;s tech leaders with your support — become a
-                sponsor and drive innovation forward
-              </p>
+            <Line n={4}>
+                <p
+                    className="
+                    font-medium
+                    bg-linear-to-r
+                    from-[#95D500]
+                    to-[#02E53F]
+                    text-transparent
+                    bg-clip-text
+                    drop-shadow-[0_0_12px_rgba(149,213,0,0.35)]
+                    bg-size-[200%_200%] animate-gradient
+
+                    "
+                >
+                    Empower tomorrow&apos;s tech leaders with your support — become a
+                    sponsor and drive innovation forward
+                </p>
             </Line>
 
             <div className="h-4" />
@@ -131,7 +143,7 @@ export default function Sponsor() {
               onClick={handleEnter}
               className="
                 shrink-0 rounded
-                bg-[#22c55e] px-3 py-1.5
+                bg-[#34DF29] px-3 py-1.5
                 text-[11px] font-bold text-black
                 shadow-[0_0_15px_rgba(34,197,94,0.3)]
                 transition-all duration-200
