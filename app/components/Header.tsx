@@ -13,9 +13,9 @@ const navItems = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-``
+
   return (
-    <header className="w-full bg-black border-b border-white/10 font-mono">
+    <header className="w-full bg-black/80 backdrop-blur-md border-b border-white/10 font-mono">
       {/* Mobile Header */}
       <div className="md:hidden flex items-center justify-between px-4 py-4">
         <Link href="/" className="text-white font-semibold tracking-wide">
@@ -51,7 +51,7 @@ export default function Header() {
       )}
 
       {/* Desktop Header */}
-      <nav className="hidden md:flex max-w-7xl mx-auto justify-end gap-12 px-6 py-6">
+      <nav className="hidden md:flex max-w-7xl mx-auto justify-end gap-8 px-4 py-6">
         {navItems.map((item) => (
           <Link
             key={item.id}
@@ -61,7 +61,7 @@ export default function Header() {
             <span className={`text-sm ${item.color}`}>
               {item.id}/
             </span>
-            <span className="text-sm">
+            <span className="text-base">
               {item.label}
             </span>
           </Link>
