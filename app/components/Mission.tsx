@@ -1,3 +1,92 @@
-export default function Mission() {
-    return <div>Our Mission</div>
+import React from "react";
+
+interface MissionItem {
+  number: string | number;
+  text: string;
+}
+
+interface MissionProps {
+  items?: MissionItem[];
+  className?: string;
+}
+
+export default function Mission({ 
+  items = [
+    { number: "1", text: "mission1" },
+    { number: "2", text: "mission2" }
+  ],
+  className = ""
+}: MissionProps) {
+  return (
+    <div className={`relative w-[1077px] h-[465.75px] text-white ${className}`}>
+      {/* Background Layer with Backdrop Blur */}
+      <div
+        className="absolute left-[-1px] top-[-1px] w-full h-full rounded-xl bg-[#1f1f1f]/40 border border-white/[0.15] backdrop-blur-sm"
+        style={{ boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)" }}
+      />
+
+      {/* Content Container */}
+      <div className="absolute left-[74px] top-[55px] flex h-[356px] items-center justify-start gap-10">
+        
+        {/* ASCII Art - Using font-mono for strict alignment */}
+        <div className="flex-grow-0 flex-shrink-0 text-sm font-medium text-center font-mono leading-tight whitespace-pre select-none bg-gradient-to-tr from-[#02E53F] to-[#95D500] bg-clip-text text-transparent">
+{`.::.
+^5&@@@@&5^
+~G@@@@@@@@@@@@G!
+.7B@@@@@@@@@@?P@@@@@@B7.
+.?#@@@@@B? @@@@/ @@# P&@@@@#?.
+J@@@@@@. .@@@@@/ @@@@&! 7@@@@@@J
+.@&&@@@@@&. l@@/ @@@@#. #@@@@&?Y@.
+B@.lPG#@@@@@@@@J@@@@@@@@@@#?. &#
+!@B::::lPG#&@@@@@@@@@@@@B!. :@!
+@&::::::::lPGB&@@@@@@P~ 5@
+B&&l::::::::::::#@@7 .?#B.
+.?#&:::::::::::5@# .7BBJ.
+.J#&l::::::::@# !G#Y:
+:5&&l:::::@# ~P#5^
+^P&l::5@# ^5#P^
+~G&&@&YBG~
+^~~^.`}
+        </div>
+
+        {/* Vertical Divider Line */}
+        <svg
+          width={1}
+          height={356}
+          viewBox="0 0 1 356"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="self-stretch flex-grow-0 flex-shrink-0"
+          preserveAspectRatio="none"
+        >
+          <path d="M0.5 0V356" stroke="white" strokeOpacity="0.15" />
+        </svg>
+
+        {/* Text Column */}
+        <div className="flex w-[539px] flex-shrink-0 flex-grow-0 flex-col items-start justify-start gap-2.5">
+          <div className="relative flex items-center justify-center gap-2.5 p-2.5 pl-0">
+            <h2 className="text-4xl font-bold text-left text-white tracking-wide">
+              OUR MISSION
+            </h2>
+          </div>
+          
+          <div className="flex flex-col items-start justify-start self-stretch gap-2">
+            {items.map((item, index) => (
+              <div
+                key={index}
+                className="relative flex items-start justify-start gap-4 self-stretch pb-1.5"
+              >
+                <p className="w-[29px] flex-shrink-0 text-center text-base text-white opacity-25 font-mono">
+                  {item.number}
+                </p>
+                <p className="w-[494px] flex-grow text-left text-base text-white/80 leading-relaxed">
+                  {item.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
