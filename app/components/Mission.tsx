@@ -21,7 +21,7 @@ export default function Mission({
     <div className={`relative w-[1077px] h-[465.75px] text-white ${className}`}>
       {/* Background Layer with Backdrop Blur */}
       <div
-        className="absolute left-[-1px] top-[-1px] w-full h-full rounded-xl bg-[#1f1f1f]/40 border border-white/[0.15] backdrop-blur-sm"
+        className="absolute left-[-1px] top-[-1px] w-full h-full rounded-xl bg-[#1f1f1f]/40 border border-white/[0.15] backdrop-blur-sm transition-all duration-100 hover:border-white/[0.30]"
         style={{ boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)" }}
       />
 
