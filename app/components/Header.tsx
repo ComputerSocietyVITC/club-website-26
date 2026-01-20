@@ -51,7 +51,7 @@ export default function Header() {
       )}
 
       {/* Desktop Header */}
-      <nav className="hidden md:flex max-w-7xl mx-auto justify-end gap-4 px-4 py-6">
+      <nav className="hidden md:flex max-w-7xl ml-auto justify-end gap-8 py-6 pr-10">
         {navItems.map((item) => (
           <Link
             key={item.id}
