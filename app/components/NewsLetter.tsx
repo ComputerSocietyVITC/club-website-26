@@ -33,7 +33,7 @@ export default function NewsLetter() {
   }
 
   return (
-    <section className="mx-auto max-w-2xl px-6 py-24">
+    <section className="relative ml-10 mr-auto max-w-3xl px-6 py-24 mb-50">
 
       <div
         className="
@@ -51,11 +51,11 @@ export default function NewsLetter() {
         <div className="pointer-events-none absolute inset-0 bg-linear-to-br from-white/5 via-transparent to-black/20" />
 
         <div className="relative p-5 md:p-10 space-y-4">
-          <h3 className="font-mono text-2xl md:text-3xl font-bold tracking-widest uppercase text-white">
+          <h3 className="font-mono text-3xl md:text-4xl font-bold tracking-widest uppercase text-white">
             JOIN US
           </h3>
 
-          <div className="space-y-2">
+          <div className="space-y-2 text-sm">
             <Line n={1}>
               <span className="text-zinc-300">
                 Hello there! How’s it going?
@@ -71,14 +71,14 @@ export default function NewsLetter() {
             <Line n={3} />
 
             <Line n={4} color="text-#02E53F-500/40">
-              <span className="inline-block text-1xl font-JetBrains Mono bg-clip-text text-transparent bg-gradient-to-r from-[#95D500]  to-[#02E53F] drop-shadow-lg  bg-white rounded-lg">
-                Subscribe to our mailing list to stay up to date on HackHub’s latest news!
+              <span className="inline-block text-sm font-JetBrains Mono bg-clip-text text-transparent bg-linear-to-r from-[#95D500]  to-[#02E53F] drop-shadow-lg  bg-white rounded-lg">
+                Subscribe to our mailing list to stay up to date on our latest news!
               </span>
             </Line>
           </div>
 
           <form onSubmit={handleSubmit} className="flex items-center gap-4 pt-8">
-            <span className="select-none font-mono text-xl text-zinc-500 animate-pulse">
+            <span className="select-none font-mono text-2xl text-zinc-500 animate-pulse">
               ~~&gt;
             </span>
 
@@ -114,7 +114,7 @@ export default function NewsLetter() {
           </form>
 
           {error && (
-            <p className="text-red-400 font-mono text-xs">{error}</p>
+            <p className="text-red-400 font-mono text-sm">{error}</p>
           )}
 
 

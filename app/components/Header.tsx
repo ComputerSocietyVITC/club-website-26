@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "../assets/logo.png";
 
 const navItems = [
   { id: "01", label: "ABOUT", href: "/about", color: "text-cyan-400" },
@@ -15,11 +17,11 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="w-full bg-black/80 backdrop-blur-md border-b border-white/10 font-mono">
+    <header className="w-full backdrop-blur-md border-b border-white/10 font-mono">
       {/* Mobile Header */}
       <div className="md:hidden flex items-center justify-between px-4 py-4">
-        <Link href="/" className="text-white font-semibold tracking-wide">
-          IEEE CS
+        <Link href="/" className="inline-flex items-center">
+          <Image src={logo} alt="IEEE CS logo" className="h-10 w-auto" />
         </Link>
 
         <button
@@ -51,21 +53,27 @@ export default function Header() {
       )}
 
       {/* Desktop Header */}
-      <nav className="hidden md:flex max-w-7xl ml-auto justify-end gap-8 py-6 pr-10">
-        {navItems.map((item) => (
-          <Link
-            key={item.id}
-            href={item.href}
-            className="flex items-center gap-1 text-white font-semibold tracking-widest hover:opacity-80 transition"
-          >
-            <span className={`text-sm ${item.color}`}>
-              {item.id}/
-            </span>
-            <span className="text-base">
-              {item.label}
-            </span>
-          </Link>
-        ))}
+      <nav className="hidden md:flex items-center justify-between w-full px-10 py-6">
+        <Link href="/" className="inline-flex items-center">
+          <Image src={logo} alt="IEEE CS logo" className="h-10 w-auto" priority />
+        </Link>
+
+        <div className="flex items-center gap-8">
+          {navItems.map((item) => (
+            <Link
+              key={item.id}
+              href={item.href}
+              className="flex items-center gap-1 text-white font-semibold tracking-widest hover:opacity-80 transition"
+            >
+              <span className={`text-sm ${item.color}`}>
+                {item.id}/
+              </span>
+              <span className="text-base">
+                {item.label}
+              </span>
+            </Link>
+          ))}
+        </div>
       </nav>
     </header>
   );
